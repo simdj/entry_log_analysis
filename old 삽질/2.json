@@ -1,0 +1,169 @@
+{
+    "gender" : 2,
+    "year" : 2011,
+    "key" : "As7HEvmL",
+    "swLearned" : 1,
+    "target" : "codingparty",
+    "updated" : ISODate("2015-11-30T18:24:23.833Z"),
+    "created" : ISODate("2015-11-30T18:24:23.833Z"),
+    "stages" : [ 
+        {
+            "stageId" : "2-1",
+            "_id" : ObjectId("565c945c78535e8b5d73d027"),
+            "actions" : [],
+            "startTime" : ISODate("2015-11-30T18:24:28.655Z")
+        }, 
+        {
+            "stageId" : "2-1",
+            "_id" : ObjectId("565c946a224834720d3ca740"),
+            "actions" : [],
+            "startTime" : ISODate("2015-11-30T18:24:42.667Z")
+        }, 
+        {
+            "stageId" : "2-1",
+            "_id" : ObjectId("565c947378535e8b5d73d028"),
+            "actions" : [],
+            "startTime" : ISODate("2015-11-30T18:24:51.201Z")
+        }, 
+        {
+            "stageId" : "3-1",
+            "_id" : ObjectId("565c947b78535e8b5d73d029"),
+            "actions" : [],
+            "startTime" : ISODate("2015-11-30T18:24:59.948Z")
+        }, 
+        {
+            "stageId" : "3-5",
+            "_id" : ObjectId("565c947e78535e8b5d73d02a"),
+            "actions" : [ 
+                {
+                    "name" : "run",
+                    "_id" : ObjectId("565c948d78535e8b5d73d02b"),
+                    "timestamp" : ISODate("2015-11-30T18:25:30.188Z"),
+                    "data" : [ 
+                        {
+                            "key" : "script",
+                            "value" : "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"maze_step_unstart\" class=\"inline maze_step_unstart\" id=\"8\" deletable=\"false\" movable=\"false\" x=\"20\" y=\"22\"><next><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"10\"><next><block type=\"maze_step_jump\" class=\"inline maze_step_jump\" id=\"14\"><next><block type=\"maze_step_rotate\" class=\"inline maze_step_rotate\" id=\"16\"><field name=\"VALUE\">LEFT</field><next><block type=\"maze_step_jump\" class=\"inline maze_step_jump\" id=\"18\"><next><block type=\"maze_step_rotate\" class=\"inline maze_step_rotate\" id=\"20\"><field name=\"VALUE\">RIGHT</field><next><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"22\"></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+                            "_id" : ObjectId("565c948d78535e8b5d73d02c")
+                        }
+                    ]
+                }
+            ],
+            "startTime" : ISODate("2015-11-30T18:25:02.348Z"),
+            "finishTime" : ISODate("2015-11-30T18:25:21.003Z")
+        }, 
+        {
+            "stageId" : "3-6",
+            "_id" : ObjectId("565c94918b0334b1716d4315"),
+            "actions" : [ 
+                {
+                    "name" : "run",
+                    "_id" : ObjectId("565c94a2251e2b7b65bf38f0"),
+                    "timestamp" : ISODate("2015-11-30T18:25:45.643Z"),
+                    "data" : [ 
+                        {
+                            "key" : "script",
+                            "value" : "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"maze_step_unstart\" class=\"inline maze_step_unstart\" id=\"34\" deletable=\"false\" movable=\"false\" x=\"20\" y=\"22\"><next><block type=\"maze_step_unfor\" class=\"inline maze_step_unfor\" id=\"35\" deletable=\"false\"><field name=\"VALUE\">6</field><statement name=\"DO\"><block type=\"maze_step_move_unstep\" class=\"inline maze_step_move_unstep\" id=\"36\" deletable=\"false\"></block></statement></block></next></block></xml>",
+                            "_id" : ObjectId("565c94a2251e2b7b65bf38f1")
+                        }
+                    ]
+                }
+            ],
+            "startTime" : ISODate("2015-11-30T18:25:21.351Z"),
+            "finishTime" : ISODate("2015-11-30T18:25:49.964Z")
+        }, 
+        {
+            "stageId" : "3-7",
+            "_id" : ObjectId("565c94b7251e2b7b65bf38f2"),
+            "actions" : [ 
+                {
+                    "name" : "run",
+                    "_id" : ObjectId("565c94cf251e2b7b65bf38f3"),
+                    "timestamp" : ISODate("2015-11-30T18:26:31.026Z"),
+                    "data" : [ 
+                        {
+                            "key" : "script",
+                            "value" : "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"maze_step_unstart\" class=\"inline maze_step_unstart\" id=\"45\" deletable=\"false\" movable=\"false\" x=\"20\" y=\"22\"><next><block type=\"maze_step_for\" class=\"inline maze_step_for\" id=\"59\"><field name=\"VALUE\">2</field><statement name=\"DO\"><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"47\"><next><block type=\"maze_step_jump\" class=\"inline maze_step_jump\" id=\"49\"></block></next></block></statement></block></next></block><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"55\" x=\"263\" y=\"186\"></block><block type=\"maze_step_jump\" class=\"inline maze_step_jump\" id=\"57\" x=\"344\" y=\"281\"></block><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"51\" x=\"249\" y=\"329\"></block></xml>",
+                            "_id" : ObjectId("565c94cf251e2b7b65bf38f4")
+                        }
+                    ]
+                }
+            ],
+            "startTime" : ISODate("2015-11-30T18:25:59.400Z"),
+            "finishTime" : ISODate("2015-11-30T18:26:19.826Z")
+        }, 
+        {
+            "stageId" : "3-8",
+            "_id" : ObjectId("565c94d078535e8b5d73d02d"),
+            "actions" : [ 
+                {
+                    "name" : "run",
+                    "_id" : ObjectId("565c94e72e3ab9eb6bb27cae"),
+                    "timestamp" : ISODate("2015-11-30T18:27:01.606Z"),
+                    "data" : [ 
+                        {
+                            "key" : "script",
+                            "value" : "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"maze_step_unstart\" class=\"inline maze_step_unstart\" id=\"71\" deletable=\"false\" movable=\"false\" x=\"20\" y=\"22\"><next><block type=\"maze_step_for\" class=\"inline maze_step_for\" id=\"85\"><field name=\"VALUE\">2</field><statement name=\"DO\"><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"73\"><next><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"75\"><next><block type=\"maze_step_rotate\" class=\"inline maze_step_rotate\" id=\"79\"><field name=\"VALUE\">RIGHT</field></block></next></block></next></block></statement></block></next></block><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"77\" x=\"210\" y=\"148\"></block><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"81\" x=\"285\" y=\"222\"></block><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"83\" x=\"49\" y=\"269\"></block></xml>",
+                            "_id" : ObjectId("565c94e72e3ab9eb6bb27caf")
+                        }
+                    ]
+                }, 
+                {
+                    "name" : "run",
+                    "_id" : ObjectId("565c94fa2e3ab9eb6bb27cb0"),
+                    "timestamp" : ISODate("2015-11-30T18:27:19.628Z"),
+                    "data" : [ 
+                        {
+                            "key" : "script",
+                            "value" : "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"maze_step_unstart\" class=\"inline maze_step_unstart\" id=\"86\" deletable=\"false\" movable=\"false\" x=\"20\" y=\"22\"><next><block type=\"maze_step_for\" class=\"inline maze_step_for\" id=\"87\"><field name=\"VALUE\">3</field><statement name=\"DO\"><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"88\"><next><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"89\"><next><block type=\"maze_step_rotate\" class=\"inline maze_step_rotate\" id=\"90\"><field name=\"VALUE\">RIGHT</field></block></next></block></next></block></statement></block></next></block><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"91\" x=\"210\" y=\"148\"></block><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"92\" x=\"285\" y=\"222\"></block><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"93\" x=\"49\" y=\"269\"></block></xml>",
+                            "_id" : ObjectId("565c94fa2e3ab9eb6bb27cb1")
+                        }
+                    ]
+                }
+            ],
+            "startTime" : ISODate("2015-11-30T18:26:24.894Z"),
+            "finishTime" : ISODate("2015-11-30T18:27:12.035Z")
+        }, 
+        {
+            "stageId" : "3-9",
+            "_id" : ObjectId("565c9508251e2b7b65bf38f5"),
+            "actions" : [ 
+                {
+                    "name" : "run",
+                    "_id" : ObjectId("565c951a251e2b7b65bf38f6"),
+                    "timestamp" : ISODate("2015-11-30T18:27:45.326Z"),
+                    "data" : [ 
+                        {
+                            "key" : "script",
+                            "value" : "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"maze_step_unstart\" class=\"inline maze_step_unstart\" id=\"106\" deletable=\"false\" movable=\"false\" x=\"20\" y=\"22\"><next><block type=\"maze_step_for\" class=\"inline maze_step_for\" id=\"110\"><field name=\"VALUE\">3</field><statement name=\"DO\"><block type=\"maze_step_rotate\" class=\"inline maze_step_rotate\" id=\"112\"><field name=\"VALUE\">LEFT</field><next><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"114\"><next><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"116\"><next><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"118\"><next><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"120\"></block></next></block></next></block></next></block></next></block></statement></block></next></block></xml>",
+                            "_id" : ObjectId("565c951a251e2b7b65bf38f7")
+                        }
+                    ]
+                }
+            ],
+            "startTime" : ISODate("2015-11-30T18:27:20.368Z"),
+            "finishTime" : ISODate("2015-11-30T18:27:50.646Z")
+        }, 
+        {
+            "stageId" : "3-10",
+            "_id" : ObjectId("565c95212e3ab9eb6bb27cb2"),
+            "actions" : [ 
+                {
+                    "name" : "run",
+                    "_id" : ObjectId("565c95382e3ab9eb6bb27cb3"),
+                    "timestamp" : ISODate("2015-11-30T18:28:22.326Z"),
+                    "data" : [ 
+                        {
+                            "key" : "script",
+                            "value" : "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"maze_step_unstart\" class=\"inline maze_step_unstart\" id=\"133\" deletable=\"false\" movable=\"false\" x=\"20\" y=\"22\"><next><block type=\"maze_step_for\" class=\"inline maze_step_for\" id=\"135\"><field name=\"VALUE\">3</field><statement name=\"DO\"><block type=\"maze_step_rotate\" class=\"inline maze_step_rotate\" id=\"137\"><field name=\"VALUE\">RIGHT</field><next><block type=\"maze_step_jump\" class=\"inline maze_step_jump\" id=\"139\"><next><block type=\"maze_step_rotate\" class=\"inline maze_step_rotate\" id=\"141\"><field name=\"VALUE\">LEFT</field><next><block type=\"maze_step_move_step\" class=\"inline maze_step_move_step\" id=\"143\"></block></next></block></next></block></next></block></statement></block></next></block></xml>",
+                            "_id" : ObjectId("565c95382e3ab9eb6bb27cb4")
+                        }
+                    ]
+                }
+            ],
+            "startTime" : ISODate("2015-11-30T18:27:45.787Z"),
+            "finishTime" : ISODate("2015-11-30T18:28:15.271Z")
+        }
+    ],
+    "difficulty" : [],
+    "__v" : 17
+}
