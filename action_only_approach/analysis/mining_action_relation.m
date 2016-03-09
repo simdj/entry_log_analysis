@@ -1,4 +1,4 @@
-clc;clear all; close all;
+% clc;clear all; close all;
 %% Acquire data
 action_arr=['run','addBlock','insertBlock','moveBlock','seperateBlock','destroyBlock','destroyBlockAlone'];
 data = csvread('../data/good_action_10.csv',1,2);
@@ -18,7 +18,7 @@ destroy_vec = normalized_data(:,6);
 %% Call render
 %%% construct vs destroy
 X=[insert_vec+add_vec seperate_vec+destroy_vec];
-render_with_kmeans(X,'construct vs destroy', 'construct probability', 'destory probability');
+render_with_kmeans(X,'construct vs destroy', 'construct probability', 'destroy probability');
 % 
 % %%% construct vs run
 % X=[insert_vec+add_vec run_vec];
@@ -26,6 +26,6 @@ render_with_kmeans(X,'construct vs destroy', 'construct probability', 'destory p
 % 
 % %%% run vs others
 % X=[run_vec except_run_vec];
-% render_with_kmeans(X,'run vs others', 'run probability', 'others probability');
+% render_with_kmeans(X,'Run vs Others', 'Run probability', 'Others probability');
 % 
 % 
