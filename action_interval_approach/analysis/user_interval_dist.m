@@ -1,4 +1,5 @@
-clc;clear all; close all;
+clc; close all;
+% clear all;
 % interval_dist(user, lecture)
 % interval_dist(user, all_lecture)
 % interval_dist(all user, lecture)
@@ -14,15 +15,16 @@ raw_data = csvread('../data/good_interval_freq_right_after_repeat_10_49.csv',1,0
 [user_list,~,~] = unique(raw_data(:,1));
 
 figure
-for i=1:30
-    target_user_number=user_list(i);
-    subplot(5,6,i)
+for i=1:12
+    target_user_number=user_list(i*14);
+    subplot(4,3,i)
     render_user_all_lecture_interval_dist(raw_data, target_user_number);
 end
 
-
+good_example_user_list=[55 96 139];
 for i=1:3
-    target_user_number=user_list(i);
+%     target_user_number=user_list(i*109)
+    target_user_number = good_example_user_list(i);
     % In function, it call figure and subplot
     render_user_lecture_interval_dist(raw_data, target_user_number);
 end
