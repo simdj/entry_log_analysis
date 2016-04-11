@@ -49,6 +49,7 @@ class block_action_csv_generator():
 
     def filtering(self,row):
         # 0. only select 200, 400 stage 
+        # new 0. only select 400 stage
         # 1. remove the last stage information of each user
         # 2. remove 2-13 stage, 4-1 stage
         # (optional) 3. remove log containing only run action
@@ -56,7 +57,9 @@ class block_action_csv_generator():
         stage_id= int(row[1]);
 
         ## condition 0
-        if stage_id>300 and stage_id <400:
+        # if stage_id>300 and stage_id <400:
+        #     return False;
+        if stage_id <400:
             return False;
         if stage_id>500:
             return False;

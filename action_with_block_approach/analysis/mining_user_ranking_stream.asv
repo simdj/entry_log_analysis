@@ -1,0 +1,37 @@
+clc; close all;
+clear all;
+%% pre processing
+% |row| = 221330
+% *** raw_data format *** 
+% id,lecture,run,+normal,+repeat,+if // exclude -normal,-repeat,-if
+% 1,402,1,8,0,0, //0,0,0
+% 2,206,4,13,0,0,//3,0,0
+data = csvread('../data/good_block_action.csv',1,0,[1,0,1000, 5]);
+% filter only user course 4
+% data = data(data(:,2)>400,:); # already filtered in generating.py
+
+%% get center list of each lecture
+cluster_center_3d_list=mining_get_lecture_cluster_center(data, 5,3);
+%  squeeze(cluster_center_3d_list(3,:,:))
+
+
+%% get stream of user ranking 
+[user_id_list, ~, ~] = unique(data(:,1));
+% 6 users
+% target_list = [1 2 242 269 583 354 ];
+for i=1:2
+    query_user_number = user_id_list(i);
+    user_data = data(data(:,1)==query_user_number,:);
+    use_rank=zeros(size(cluster_center_3d_list,1));
+    for k=1:size(user_data,1)
+        target_lecture_number = user_data(k,2);
+        target_lecture_cluster_center = squeeze(cluster_center_3d_list(==target_lecture_number,:,:))
+    end
+end
+% figure;
+% for i=1:6
+%     subplot(3,2,i);
+% %     query_user_number = user_id_list(66*i+255);
+%     query_user_number = target_list(i);
+% %     test_user_achievement(query_user_number, raw_data, lecture_guide)
+% end
