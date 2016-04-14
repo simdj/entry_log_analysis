@@ -1,24 +1,4 @@
 
-
-// printjson(db.getCollection('activities').find(
-// 	{	
-// 		$or:
-// 			[
-// 				{ key : "PZIw4nSY" },
-// 				{ key : "injjJ2rM" }
-// 			]
-		
-// 	},
-	
-// 	{
-// 		key:1, "stages.stageId":1, "stages.actions.name":1,
-// 		"stages.actions.data.key":1, "stages.actions.data.value":1,
-// 		_id:0
-//     }
-// ).toArray())
-
-
-
 function traverse(o, block_id) {
 	var ret=''
     for (i in o) {
