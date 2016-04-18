@@ -50,7 +50,8 @@ def row_parse(input_arr):
     # 12-10 -> 1210
     # lecture number string -> integer
     lecture_number = int(input_arr[1].split('-')[0])*100+int(input_arr[1].split('-')[1])
-
+    if lecture_number==401:
+        return "";
     # step 3
     ret=[user_idx, lecture_number]+[0]*(10)
     
@@ -103,7 +104,8 @@ def generate_csv(mongo_csv, new_csv):
         #     break
         if len(row)>3 and row[1][0]=='4':
             csv_row = row_parse(row);
-            writer.writerow(csv_row)
+            if csv_row!= "":
+                writer.writerow(csv_row)
 
 
 # main function

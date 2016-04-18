@@ -10,7 +10,7 @@ function cluster_center_3d_list = mining_get_lecture_cluster_center(data, k, fea
     
     for i = 1:length(lecture_number_list)
 %         subplot(3,3,i)
-        figure('Position',[100 100 800 600]);
+%         figure('Position',[100 100 800 600]);
         target_data = data(data(:,2)==lecture_number_list(i), 4:6);
         target_data = remove_outlier(target_data);
         size(target_data)

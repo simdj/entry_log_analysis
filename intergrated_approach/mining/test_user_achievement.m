@@ -29,8 +29,8 @@ for i=1:query_user_lecture_count
     user_achievement_data(index,3)=query_user_answer(i,3);
 end
 
-data = [user_achievement_data(:,2) user_achievement_data(:,3)]
-hb = bar(data,'stack');
+data = [user_achievement_data(:,2) user_achievement_data(:,3)];
+hb = bar(data);
 set(hb(1), 'FaceColor','r');
 set(hb(2), 'FaceColor','b');
 % title('User achievement');

@@ -1,4 +1,4 @@
-function cluster_center_3d_list = get_lecture_cluster_center(data, k, feature_count)
+function cluster_center_3d_list = get_lecture_cluster_center(data, k, feature_count, render_flag)
 %     data spec - id, lecture, run, +normal, +repeat, +if, 
 %     -normal, -repeat, -if
 %     feature_count = 3;
@@ -9,13 +9,10 @@ function cluster_center_3d_list = get_lecture_cluster_center(data, k, feature_co
     
     
     for i = 1:length(lecture_number_list)
-%         subplot(3,3,i)
-        figure('Position',[100 100 800 600]);
         target_data = data(data(:,2)==lecture_number_list(i), 4:6);
         target_data = remove_outlier(target_data);
-        size(target_data)
+%         size(target_data)
         [idx,center,~] = kmedoids(target_data, k);
-
         
         % compute the row totals
         row_totals = sum(center,2);
@@ -27,20 +24,29 @@ function cluster_center_3d_list = get_lecture_cluster_center(data, k, feature_co
             cluster_rank(row_ids(j))=j;
         end
 
-        % and display the original data in that order (concatenated with the sums)
-%         disp([A(row_ids,:), row_totals(row_ids)])
         
         cluster_center_3d_list(i,:,:)=center(row_ids,:); 
+        if render_flag==1
+%             subplot(3,3,i)
+            figure('Position',[100 100 1100 700]);
+            scatter3(target_data(:,1),target_data(:,2),target_data(:,3),[],cluster_rank(idx),'*');
+            
+            title(strcat('Lecture - ',int2str(lecture_number_list(i))),'FontSize',20);
+            xlim([0 inf]);
+            ylim([0 inf]);
+            zlim([0 inf]);
+            xlabel('#NORMAL','FontSize',20);
+            ylabel('#REPEAT','FontSize',20);
+            zlabel('#IF','FontSize',20);
+            view(-15, 25);
+            colormap(jet)
+            colorbar
+            hold on
+            scatter3(cluster_center_3d_list(i,:,1),cluster_center_3d_list(i,:,2),cluster_center_3d_list(i,:,3), histcounts(cluster_rank(idx)),1:k,'fill','o');
+            colormap(jet)
+            hold off
+            
+        end
         
-        scatter3(target_data(:,1),target_data(:,2),target_data(:,3),[],cluster_rank(idx),'fill','MarkerEdgeColor','k');
-        title(strcat('Lecture - ',int2str(lecture_number_list(i))));
-        xlim([0 inf]);
-        ylim([0 inf]);
-        zlim([0 inf]);
-        xlabel('normal');
-        ylabel('repeat');
-        zlabel('if');
-        view(-45, 25);
-        colormap(autumn)
     end
 end

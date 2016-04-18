@@ -34,41 +34,33 @@ for i=1:row_count
     end
 end
 % Now we get lecture_guide
-
 %% Let's compare user's behavior with lecture guide
-% 6 users
-% target_list = [221 560 242 269 583 354 ];
-% figure;
-% for i=1:6
-%     subplot(3,2,i);
-% %     query_user_number = user_id_list(66*i+255);
-%     query_user_number = target_list(i);
-%     test_user_achievement(query_user_number, raw_data, lecture_guide)
-% end
 
-%% time interval 
-% 
-% % *** time_interval_data format *** 
-% % id,lecture,5#,10#,30#,60#,300#,long#
-% time_interval_data=raw_data(:,[1 2 7:12]);
-% [lecture_number_list,~,lecture_index] = unique(time_interval_data(:,1));
-% % figure
-% % for i=1:12
-% %     target_user_number=user_list(i*14);
-% %     subplot(4,3,i)
-% %     render_user_all_lecture_interval_dist(raw_data, target_user_number);
-% % end
-% 
-% good_example_user_list=[55 96 139];
-% for i=1:1
-%     query_user_number=user_id_list(i);
-% %     target_user_number = good_example_user_list(i);
-%     % In function, it call figure and subplot
-%     render_user_lecture_interval_dist(time_interval_data, query_user_number);
-% end
 
+% time interval data
+% *** time_interval_data format *** 
+% id,lecture,5#,10#,30#,60#,300#,long#
+time_interval_data=raw_data(:,[1 2 7:12]);
+[lecture_number_list,~,lecture_index] = unique(time_interval_data(:,1));
 
 %% one user
-query_user_number = 1;
+query_user_number = 89;
 test_user_achievement(query_user_number, raw_data, lecture_guide);
 render_user_lecture_interval_dist(time_interval_data, query_user_number);
+
+%% one user and one lecture (deprecated)
+% query_user_number = user_id_list(1);
+% query_lecture_number = lecture_number_list(1);
+% 
+% figure;
+% 
+% set(hb(1), 'FaceColor','r');
+% set(hb(2), 'FaceColor','b');
+% title('User achievement');
+% title( strcat('User-',int2str(query_user_number),' achievement') );
+% legend('User', 'Guide');
+% axis([0 22 0 25]);
+% ylabel('Action#');
+% xlabel('Lecture')
+% x_label_str=arrayfun(@num2str, lecture_guide(:,1), 'UniformOutput', false);
+% set(gca,'XTickLabel', x_label_str','XTick',1:numel(x_label_str));
