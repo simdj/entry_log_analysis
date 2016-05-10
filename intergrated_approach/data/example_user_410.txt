@@ -1,0 +1,318 @@
+{
+    "stageId" : "4-10",
+    "actions" : [ 
+        {
+            "name" : "addBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:36.318Z"),
+            "data" : [ 
+                {
+                    "key" : "blockId",
+                    "value" : "3x8y"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false}],[{\"id\":\"3x8y\",\"name\":null,\"x\":20,\"y\":190,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[]},\"movable\":true,\"deletable\":true}]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "insertBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:36.331Z"),
+            "data" : [ 
+                {
+                    "key" : "targetBlockId",
+                    "value" : "vk0b"
+                }, 
+                {
+                    "key" : "blockId",
+                    "value" : "3x8y"
+                }, 
+                {
+                    "key" : "positionX",
+                    "value" : "20"
+                }, 
+                {
+                    "key" : "positionY",
+                    "value" : "190"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[]},\"movable\":true,\"deletable\":true}],[]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "addBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:37.997Z"),
+            "data" : [ 
+                {
+                    "key" : "blockId",
+                    "value" : "ski9"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[]},\"movable\":true,\"deletable\":true}],[],[{\"id\":\"ski9\",\"name\":null,\"x\":20,\"y\":10,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true}]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "insertBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:38.013Z"),
+            "data" : [ 
+                {
+                    "key" : "targetBlockId"
+                }, 
+                {
+                    "key" : "blockId",
+                    "value" : "ski9"
+                }, 
+                {
+                    "key" : "positionX",
+                    "value" : "20"
+                }, 
+                {
+                    "key" : "positionY",
+                    "value" : "10"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "addBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:44.156Z"),
+            "data" : [ 
+                {
+                    "key" : "blockId",
+                    "value" : "bp7s"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[{\"id\":\"bp7s\",\"name\":null,\"x\":20,\"y\":276,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[]},\"movable\":true,\"deletable\":true}]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "insertBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:44.174Z"),
+            "data" : [ 
+                {
+                    "key" : "targetBlockId",
+                    "value" : "ski9"
+                }, 
+                {
+                    "key" : "blockId",
+                    "value" : "bp7s"
+                }, 
+                {
+                    "key" : "positionX",
+                    "value" : "20"
+                }, 
+                {
+                    "key" : "positionY",
+                    "value" : "276"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "addBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:45.789Z"),
+            "data" : [ 
+                {
+                    "key" : "blockId",
+                    "value" : "mxfk"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[],[{\"id\":\"mxfk\",\"name\":null,\"x\":20,\"y\":55,\"type\":\"jr_turn_left\",\"values\":{},\"movable\":true,\"deletable\":true}]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "insertBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:45.828Z"),
+            "data" : [ 
+                {
+                    "key" : "targetBlockId"
+                }, 
+                {
+                    "key" : "blockId",
+                    "value" : "mxfk"
+                }, 
+                {
+                    "key" : "positionX",
+                    "value" : "20"
+                }, 
+                {
+                    "key" : "positionY",
+                    "value" : "55"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[{\"id\":\"mxfk\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_turn_left\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[],[]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "addBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:49.915Z"),
+            "data" : [ 
+                {
+                    "key" : "blockId",
+                    "value" : "jnb7"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[{\"id\":\"mxfk\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_turn_left\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[],[],[{\"id\":\"jnb7\",\"name\":null,\"x\":20,\"y\":362,\"type\":\"jr_if_speed\",\"values\":{\"STATEMENT\":[]},\"movable\":true,\"deletable\":true}]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "insertBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:49.926Z"),
+            "data" : [ 
+                {
+                    "key" : "targetBlockId",
+                    "value" : "3x8y"
+                }, 
+                {
+                    "key" : "blockId",
+                    "value" : "jnb7"
+                }, 
+                {
+                    "key" : "positionX",
+                    "value" : "20"
+                }, 
+                {
+                    "key" : "positionY",
+                    "value" : "362"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[{\"id\":\"mxfk\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_turn_left\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true},{\"id\":\"jnb7\",\"name\":null,\"x\":0,\"y\":227,\"type\":\"jr_if_speed\",\"values\":{\"STATEMENT\":[]},\"movable\":true,\"deletable\":true}],[],[],[],[],[]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "insertBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:54.965Z"),
+            "data" : [ 
+                {
+                    "key" : "targetBlockId",
+                    "value" : "bp7s"
+                }, 
+                {
+                    "key" : "blockId",
+                    "value" : "jnb7"
+                }, 
+                {
+                    "key" : "positionX",
+                    "value" : "0"
+                }, 
+                {
+                    "key" : "positionY",
+                    "value" : "227"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[{\"id\":\"mxfk\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_turn_left\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true},{\"id\":\"jnb7\",\"name\":null,\"x\":0,\"y\":149,\"type\":\"jr_if_speed\",\"values\":{\"STATEMENT\":[]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[],[],[]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "addBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:58.619Z"),
+            "data" : [ 
+                {
+                    "key" : "blockId",
+                    "value" : "95ib"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[{\"id\":\"mxfk\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_turn_left\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true},{\"id\":\"jnb7\",\"name\":null,\"x\":0,\"y\":149,\"type\":\"jr_if_speed\",\"values\":{\"STATEMENT\":[]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[],[],[],[{\"id\":\"95ib\",\"name\":null,\"x\":20,\"y\":145,\"type\":\"jr_go_slow\",\"values\":{},\"movable\":true,\"deletable\":true}]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "insertBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:58.637Z"),
+            "data" : [ 
+                {
+                    "key" : "targetBlockId"
+                }, 
+                {
+                    "key" : "blockId",
+                    "value" : "95ib"
+                }, 
+                {
+                    "key" : "positionX",
+                    "value" : "20"
+                }, 
+                {
+                    "key" : "positionY",
+                    "value" : "145"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[{\"id\":\"mxfk\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_turn_left\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true},{\"id\":\"jnb7\",\"name\":null,\"x\":0,\"y\":149,\"type\":\"jr_if_speed\",\"values\":{\"STATEMENT\":[{\"id\":\"95ib\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_slow\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[],[],[],[]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "addBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:59.950Z"),
+            "data" : [ 
+                {
+                    "key" : "blockId",
+                    "value" : "9x6v"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[{\"id\":\"mxfk\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_turn_left\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true},{\"id\":\"jnb7\",\"name\":null,\"x\":0,\"y\":149,\"type\":\"jr_if_speed\",\"values\":{\"STATEMENT\":[{\"id\":\"95ib\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_slow\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[],[],[],[],[{\"id\":\"9x6v\",\"name\":null,\"x\":20,\"y\":100,\"type\":\"jr_turn_right\",\"values\":{},\"movable\":true,\"deletable\":true}]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "insertBlock",
+            "timestamp" : ISODate("2015-11-30T18:36:59.973Z"),
+            "data" : [ 
+                {
+                    "key" : "targetBlockId",
+                    "value" : "95ib"
+                }, 
+                {
+                    "key" : "blockId",
+                    "value" : "9x6v"
+                }, 
+                {
+                    "key" : "positionX",
+                    "value" : "20"
+                }, 
+                {
+                    "key" : "positionY",
+                    "value" : "100"
+                }, 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[{\"id\":\"mxfk\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_turn_left\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true},{\"id\":\"jnb7\",\"name\":null,\"x\":0,\"y\":149,\"type\":\"jr_if_speed\",\"values\":{\"STATEMENT\":[{\"id\":\"95ib\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_slow\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"9x6v\",\"name\":null,\"x\":0,\"y\":61,\"type\":\"jr_turn_right\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[],[],[],[],[]]"
+                }
+            ]
+        }, 
+        {
+            "name" : "run",
+            "timestamp" : ISODate("2015-11-30T18:37:00.564Z"),
+            "data" : [ 
+                {
+                    "key" : "code",
+                    "value" : "[[{\"id\":\"vk0b\",\"name\":null,\"x\":50,\"y\":30,\"type\":\"jr_start_basic\",\"values\":{},\"movable\":false,\"deletable\":false},{\"id\":\"3x8y\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_repeat_until_dest\",\"values\":{\"STATEMENT\":[{\"id\":\"ski9\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_straight\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"bp7s\",\"name\":null,\"x\":0,\"y\":102,\"type\":\"jr_if_construction\",\"values\":{\"STATEMENT\":[{\"id\":\"mxfk\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_turn_left\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true},{\"id\":\"jnb7\",\"name\":null,\"x\":0,\"y\":149,\"type\":\"jr_if_speed\",\"values\":{\"STATEMENT\":[{\"id\":\"95ib\",\"name\":null,\"x\":0,\"y\":31,\"type\":\"jr_go_slow\",\"values\":{},\"movable\":true,\"deletable\":true},{\"id\":\"9x6v\",\"name\":null,\"x\":0,\"y\":61,\"type\":\"jr_turn_right\",\"values\":{},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}]},\"movable\":true,\"deletable\":true}],[],[],[],[],[],[],[]]"
+                }
+            ]
+        }
+    ]
+}

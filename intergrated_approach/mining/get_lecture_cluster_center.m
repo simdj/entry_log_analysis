@@ -1,4 +1,4 @@
-function cluster_center_3d_list = get_lecture_cluster_center(data, k, feature_count, render_flag)
+ function cluster_center_3d_list = get_lecture_cluster_center(data, k, feature_count, render_flag)
 %     data spec - id, lecture, run, +normal, +repeat, +if, 
 %     -normal, -repeat, -if
 %     feature_count = 3;
@@ -13,6 +13,9 @@ function cluster_center_3d_list = get_lecture_cluster_center(data, k, feature_co
         target_data = remove_outlier(target_data);
 %         size(target_data)
         [idx,center,~] = kmedoids(target_data, k);
+        if lecture_number_list(i)==406
+            idx
+        end
         
         % compute the row totals
         row_totals = sum(center,2);
