@@ -12,10 +12,8 @@
         target_data = data(data(:,2)==lecture_number_list(i), 4:6);
         target_data = remove_outlier(target_data);
 %         size(target_data)
-        [idx,center,~] = kmedoids(target_data, k);
-        if lecture_number_list(i)==406
-            idx
-        end
+        [idx,center,~] = kmeans(target_data, k);
+        
         
         % compute the row totals
         row_totals = sum(center,2);

@@ -1,4 +1,5 @@
-
+// usage
+// mongo entry_3 mongo_get_every_data.js > [mongo_result_#.csv]
 
 function traverse(o, block_id) {
 	var ret=''

@@ -1,5 +1,5 @@
 clc; close all;
-% clear all;
+clear all;
 %% pre processing
 % |row| = 221330
 % *** raw_data format *** 
@@ -8,7 +8,7 @@ clc; close all;
 % 1,402,1,8,0,0,0,0,0
 % 2,206,4,13,0,0,3,0,0
 % raw_data = csvread('../data/intergrated_data.csv',1,0);
-raw_data = csvread('../../intergrated_approach_2016_summer/data/data.csv',4,0);
+raw_data = csvread('../data/data.csv',2,0);
 
 % *** lecture_raw_data format *** 
 % lecture,run,+normal,+repeat,+if // esclude -normal,-repeat,-if
