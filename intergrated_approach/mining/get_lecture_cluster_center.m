@@ -30,7 +30,8 @@
         if render_flag==1
 %             subplot(3,3,i)
             figure('Position',[100 100 1100 700]);
-            scatter3(target_data(:,1),target_data(:,2),target_data(:,3),[],cluster_rank(idx),'*');
+%             scatter3(target_data(:,1),target_data(:,2),target_data(:,3),[],cluster_rank(idx),'*');
+            scatter3(target_data(:,1),target_data(:,2),target_data(:,3),50,cluster_rank(idx),'*');
             
             title(strcat('Lecture - ',int2str(lecture_number_list(i))),'FontSize',20);
             xlim([0 inf]);

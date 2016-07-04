@@ -118,6 +118,7 @@ fill_csv_table = function(obj){
 }
 
 header_row=['id','lecture','run', '+normal', '+repeat','+if', '5#', '10#', '30#', '60#','300#','long#']
+time_limit_list=[5,10,30,60,300]
 user2int_mapping={}
 user_count=0
 print_compressed_csv_row_data = function(user, lecture, action_list){
@@ -126,23 +127,44 @@ print_compressed_csv_row_data = function(user, lecture, action_list){
 	// +repeat~2016-06-13T12:06:43.115Z,+if~2016-06-13T12:06:44.969Z,+normal~2016-06-13T12:06:47.433Z,+normal~2016-06-13T12:06:51.440Z,run~2016-06-13T12:06:52.559Z
 	// a=['+repeat~2016-06-13T12:06:43.115Z','+if~2016-06-13T12:06:44.969Z','+normal~2016-06-13T12:06:47.433Z','+normal~2016-06-13T12:06:51.440Z','run~2016-06-13T12:06:52.559Z']
 	// ret = [user,lecture].concat(new Array(header_row.length-2).fill(0))
+	
 	if(!user2int_mapping[user]){
 		user_count++
 		user2int_mapping[user]=user_count
 	}
-	ret = [user2int_mapping[user],lecture]
+	var ret = [user2int_mapping[user],lecture]
 	// .concat(new Array(header_row.length-2).fill(0))
 	for(var i=0;i<header_row.length-2;i++){
 		ret.push(0)
 	}
+	base_time = ''
 	for(i in action_list){
 		col_name = action_list[i].split('~')[0]
 		col_index = header_row.indexOf(col_name)
-		if(col_index>0){
-			ret[col_index]++
+		if(col_index<0){
+			continue
 		}
+
+		//action count
+		ret[col_index]++
+		
+		//time interval count
+		if(!base_time){
+			base_time = new Date(action_list[i].split('~').pop())
+		}else{
+			diff = (new Date(action_list[i].split('~').pop()) - base_time)/1000
+			time_limit_index = time_limit_list.map(function(x){return x>diff}).indexOf(true)
+			time_limit_index==-1 ? ret[ret.length-1]++ : ret[6+time_limit_index]++
+			base_time = new Date(action_list[i].split('~').pop())
+		}
+
 	}
-	print(ret)
+
+	//lecture filter
+	if(lecture!=401){
+		print(ret)
+	}
+
 
 }
 
@@ -180,4 +202,5 @@ while (cursor.hasNext()) {
   	fill_csv_table(cursor.next())
 }
 
+print(header_row)
 print_csv_table()
