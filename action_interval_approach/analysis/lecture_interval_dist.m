@@ -1,4 +1,5 @@
-clc;clear all; close all;
+% clc;close all;
+clear all; 
 %% pre processing
 % raw_data = csvread('../data/good_interval_freq.csv',1,0);
 % raw_data = csvread('../data/good_interval_freq_right_after_if.csv',1,0);
@@ -7,8 +8,12 @@ clc;clear all; close all;
 % raw_data = csvread('../data/good_interval_freq_10_49.csv',1,0);
 % raw_data = csvread('../data/good_interval_freq_right_after_if.csv',1,0);
 
-% 2015
+% 2015 -old
 % raw_data = csvread('../data/good_interval_freq_right_after_repeat.csv',1,0);
+
+% 2015 -new
+raw_data = csvread('../../intergrated_approach/data/intergrated_data_2015.csv',3,0);
+raw_data = [raw_data(:,1:2) raw_data(:,7:end)];
 
 % 2016
 % id,lecture,run,+normal,+repeat,+if,5#,10#,30#,60#,300#,long#

@@ -1,5 +1,6 @@
 // usage
 // mongo entry_2016 generate_dataset_csv.js > [mongo_result_#.csv]
+// mongo entry_2016Summer generate_dataset_csv.js > data_all.csv
 COMMAND_TYPES={
 	addThread: 101,
 	// ...
@@ -9,6 +10,11 @@ COMMAND_TYPES={
 
 }
 var csv_table ={}
+header_row=['id','lecture','run', '+normal', '+repeat','+if', '5#', '10#', '30#', '60#','300#','long#']
+time_limit_list=[5,10,30,60,300]
+user2int_mapping={}
+user_count=0
+
 
 function traverse(o, block_id) {
 	var ret=''
@@ -26,9 +32,6 @@ function traverse(o, block_id) {
     }
     return ret;
 }      
-
-
-
 
 get_metadata_from_action = function(action, key){
 	var action_metadata = action.data;
@@ -117,17 +120,15 @@ fill_csv_table = function(obj){
 
 }
 
-header_row=['id','lecture','run', '+normal', '+repeat','+if', '5#', '10#', '30#', '60#','300#','long#']
-time_limit_list=[5,10,30,60,300]
-user2int_mapping={}
-user_count=0
+
+//printing start
+
 print_compressed_csv_row_data = function(user, lecture, action_list){
 	// zCZUHEOL
 	// 407
 	// +repeat~2016-06-13T12:06:43.115Z,+if~2016-06-13T12:06:44.969Z,+normal~2016-06-13T12:06:47.433Z,+normal~2016-06-13T12:06:51.440Z,run~2016-06-13T12:06:52.559Z
 	// a=['+repeat~2016-06-13T12:06:43.115Z','+if~2016-06-13T12:06:44.969Z','+normal~2016-06-13T12:06:47.433Z','+normal~2016-06-13T12:06:51.440Z','run~2016-06-13T12:06:52.559Z']
 	// ret = [user,lecture].concat(new Array(header_row.length-2).fill(0))
-	
 	if(!user2int_mapping[user]){
 		user_count++
 		user2int_mapping[user]=user_count
@@ -159,13 +160,10 @@ print_compressed_csv_row_data = function(user, lecture, action_list){
 		}
 
 	}
-
 	//lecture filter
 	if(lecture!=401){
 		print(ret)
 	}
-
-
 }
 
 print_csv_table = function(){
@@ -184,12 +182,22 @@ print_csv_table = function(){
 
 
 
-cursor = db.getCollection('raw_log').find(
+
+cursor = db.getCollection('raw_activities').find(
+// cursor = db.getCollection('raw_log').find(
 	// { "stageId": { $in: [ /^4-10/i ] } }
 
 	// {"stageId":"4-7","key":"zCZUHEOL"},
 	// ,
-	{ "stageId": { $in: [ /^4-/ ] } },
+	// {"stageId":"4-10"},
+	{ 
+		// "stageId": "4-10"
+		"stageId": { $in: [ /^4-/ ] } 
+		// , "created": {
+		// 	$gte : ISODate("2016-06-13T00:00:00.000Z"),
+		// 	$lt: ISODate("2016-06-20T00:00:00.000Z")
+		// }
+	},
 	{
 		key:1, "stageId":1, "type":1,
 		"actions.name":1,
@@ -198,9 +206,60 @@ cursor = db.getCollection('raw_log').find(
 		_id:0
     }
 )
+
 while (cursor.hasNext()) {
   	fill_csv_table(cursor.next())
 }
 
 print(header_row)
 print_csv_table()
+
+
+
+
+// // print((end-start)/1000)
+
+
+
+// // db.getCollection('raw_activities').find(
+// // // cursor = db.getCollection('raw_log').find(
+// // 	// { "stageId": { $in: [ /^4-10/i ] } }
+
+// // 	// {"stageId":"4-7","key":"zCZUHEOL"},
+// // 	// ,
+// // 	{"stageId":"4-10"},
+// // 	// { "stageId": { $in: [ /^4-/ ] } },
+// // 	{
+// // 		key:1, "stageId":1, "type":1,
+// // 		"actions.name":1,
+// // 		"actions.data.key":1, "actions.data.value":1,
+// // 		"actions.timestamp" : 1,
+// // 		_id:0
+// //     }
+// // ).limit(50).forEach(function(doc){db.lecture410.insert(doc);});
+
+
+// // cursor = db.getCollection('raw_log').find(
+// 	// { "stageId": { $in: [ /^4-10/i ] } }
+
+// 	// {"stageId":"4-7","key":"zCZUHEOL"},
+// 	// ,
+// 	// {"stageId":"4-10"},
+
+// //time range
+// db.getCollection('raw_activities').find(
+// 	{ 
+// 		"stageId": { $in: [ /^4-/ ] }
+// 		, "created": {
+// 			$gte : ISODate("2016-06-13T00:00:00.000Z"),
+// 			$lt: ISODate("2016-06-20T00:00:00.000Z")
+// 		} 
+// 	},
+// 	{
+// 		key:1, "stageId":1, "type":1,
+// 		"actions.name":1,
+// 		"actions.data.key":1, "actions.data.value":1,
+// 		"actions.timestamp" : 1,
+// 		_id:0
+//     }
+// ).count()

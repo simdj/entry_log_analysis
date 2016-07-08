@@ -110,6 +110,13 @@ def generate_csv(mongo_csv, new_csv):
 
 # main function
 if __name__ == "__main__":
-    mongo_csv='mongo_intergrated_result.csv'
-    new_csv='intergrated_data.csv'
+    # 4-10 log only
+    # mongo_csv='mongo_intergrated_result.csv'
+    # new_csv='intergrated_data.csv'
+
+    # all 4-x logs
+    mongo_csv='mongo_result_2015.csv'
+    new_csv='intergrated_data_2015.csv'
+
+
     generate_csv(mongo_csv, new_csv)
