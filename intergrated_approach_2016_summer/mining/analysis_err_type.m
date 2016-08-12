@@ -1,0 +1,150 @@
+clc; 
+close all;
+clear all;
+%% pre processing
+% |row| = 16388 in lecture 4-9 
+% *** raw_data format *** 
+% user,user2int,lec,#run,#action,err_incomplete,err_without_ct,err_etc
+% OUMKvehe,18,409,6,15,0,0,5
+% 8PEGM3AI,42,409,1,6,0,0,0
+% ASnwrbqm,43,409,2,7,0,0,1
+
+data = csvread('../data/feature.csv',1,1);
+
+lecture_index=409;
+data_interest = data(data(:,2)==lecture_index,:);
+
+%% remove outlier  
+
+
+% 3:run
+% 4:edit
+run_threshold = prctile(data_interest(:,3),99.5);
+edit_threshold = prctile(data_interest(:,4),99.5);
+
+
+data_interest = data_interest(data_interest(:,3)<=run_threshold,:);
+data_interest = data_interest(data_interest(:,4)<=edit_threshold,:);
+data_interest = data_interest(data_interest(:,4)>=minimum_action(lecture_index) ,:);
+
+% data_interest = data_interest(data_interest(:,4)<75,:);
+% data_interest = data_interest(data_interest(:,3)>0,:);
+% data_interest = data_interest(data_interest(:,3)<50,:);
+
+%% extract
+run_count = data_interest(:,3);
+action_count = data_interest(:,4);
+err_incomplete = data_interest(:,5);
+err_without_ct = data_interest(:,6);
+err_etc = data_interest(:,7);
+
+%% normalization
+% n1 = prctile(err_incomplete,99);
+% n2 =prctile(err_without_ct,99);
+% n3 =prctile(err_etc,99);
+% n4 =prctile(action_count,99);
+% err_incomplete = err_incomplete/n1;
+% err_without_ct = err_without_ct/n2;
+% err_etc = err_etc/n3;
+% action_count=action_count/n4;
+%% 
+X = [err_incomplete err_without_ct  err_etc  action_count];
+[Nuser,Ndim] = size(X);
+
+
+k=5;
+
+%% K medoid clustering
+rng(5) 
+% kmedoid dimension=4 k=4, rng(6) °¡Àå ±¦Ãá
+% kmeans dimension=4 k=4, rng(5) °¡Àå ±¦Ãá
+% kmeans dimension=4 k=5, rng(2) ±¦Ãá
+
+
+
+% [idx,center,~] = kmedoids(X, k);
+% seeds=[0 0 0 0; 5 0 0 15; 0 5 0 15; 0 0 5 15;0 0 5 15];
+% [idx,center,sumd] = kmeans(X, k,'start',seeds);
+X_normalized = X;
+n1 = prctile(X(:,1),99);
+n2 = prctile(X(:,2),99);
+n3 = prctile(X(:,3),99);
+n4 = prctile(X(:,4),99);
+X_normalized(:,1)=X(:,1)/n1;
+X_normalized(:,2)=X(:,2)/n2;
+X_normalized(:,3)=X(:,3)/n3;
+X_normalized(:,4)=X(:,4)/n4;
+
+[idx,normalized_center,sumd] = kmeans(X_normalized, k);
+
+restore = [n1 n2 n3 n4];
+center = [normalized_center.*repmat(restore,k,1) hist(idx, unique(idx))' ];
+
+% idx=clusterdata(X,'maxclust',5,'linkage', 'ward');
+% gmfit = fitgmdist(X,k,'CovarianceType','full', 'SharedCovariance',true);
+% idx = cluster(gmfit,X);
+
+% X=data_interest(:,5:end);
+[uniqueX, ia, n] = unique(X(:,1:3), 'rows');
+% Find number of occurrences
+nHist = hist(n, unique(n));
+
+
+
+shape_list = ['p','o','<','d','s'];
+% shape_list = ['p','o','<','>','o'];
+edge_color_list = {'r','g','b','m','c','k'};
+face_color_list = {'r','w','w','w','w','w'};
+
+% figure
+scatter3(center(:,1),center(:,2),center(:,3), 1000,'x','black','LineWidth',10);
+hold on
+% scatter3(uniqueX(:,1),uniqueX(:,2),uniqueX(:,3),(log(nHist*4).^3)*3,idx(ia),'filled');
+% scatter3(uniqueX(:,1),uniqueX(:,2),uniqueX(:,3),(log(nHist*4).^3)*3,idx(ia),'filled');
+
+
+for i=1:k
+    ith_cluster = uniqueX(idx(ia)==i,:);
+%     s3=scatter3(ith_cluster(:,1),ith_cluster(:,2),ith_cluster(:,3),(log(nHist(idx(ia)==i)*4).^3)*3);
+    s3=scatter3(ith_cluster(:,1),ith_cluster(:,2),ith_cluster(:,3),100,'LineWidth',2);
+    s3.Marker=shape_list(i);
+    s3.MarkerEdgeColor=edge_color_list{i};
+    s3.MarkerFaceColor=face_color_list{i};
+    
+end
+
+
+% for i=1:k
+% %     ith_cluster = uniqueX(idx(ia)==i,:);
+%     s3=scatter3(center(k,1),center(k,2),center(k,3), 1000 ,'x',color_list{i},'LineWidth',3);
+%     s3
+% %     s3.MarkerFaceColor=color_list{i};
+% %     s3.MarkerEdgeColor=color_list{i};
+% end
+
+hold off
+xlabel('Error (Not complete)','FontSize', 20)
+ylabel('Error (Not satisfactory)','FontSize',20)
+zlabel('Error (Not correct)','FontSize', 20)
+% zlabel('# of Edit','FontSize', 20)
+title(strcat('Lecture - ',num2str(lecture_index), ' (Sequences,Loops,Conditionals) '), 'FontSize', 20);
+colormap(jet)
+view([-25 45]);
+sortrows(center, Ndim)
+'½Ã¹«·è, ³ëÀÌÇØ, Æ®·Ñ, action'
+% cluster_center = [center(:,1) center(:,2) center(:,3) ];
+% sortrows(cluster_center,3)
+% sortrows(center, Ndim)
+center
+% uint32(sortrows(center, Ndim))
+
+legend_list = cell(k+1,1);
+legend_list{1}='Cluster Center';
+for i=1:k
+    legend_list{i+1}=strcat('Cluster ',num2str(i),': (n=',num2str(center(i,end)),')');
+end
+
+
+
+l=legend(legend_list);
+l.FontSize=20;

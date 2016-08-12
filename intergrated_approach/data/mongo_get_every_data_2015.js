@@ -133,3 +133,22 @@ cursor = db.getCollection('activities').find(
 while (cursor.hasNext()) {
   	parsing_user_json(cursor.next())
 }
+
+
+db.getCollection('lecture409').find(
+	{
+		'actions': { 
+			
+				$elemMatch : {
+					name : 'fail'
+				}
+			
+		}
+	},
+	{
+		"actions.data.$" : 1
+	}
+)
+
+// db.getCollection('lecture409').find({'key':'fQ9JLvja'}).sort({'created':1})
+db.getCollection('lecture409').find({'actions': { $elemMatch: {data :{ name :'fail'}}}})
